@@ -1,0 +1,66 @@
+{% extends "::base.html.twig" %}
+
+{% block pagetitle %}Timetable{% endblock %}
+
+{% block body %}
+
+<div class="page-header">
+    <h3>Show Timetable</h3>
+</div>
+
+<div class="alert alert-info">
+    Click and drag on a time period on the timetable to book a slot
+</div>
+<div id="timetable-container" style="position:relative">
+    <div id="timetable"></div>
+    <div id="timetable-popover-create" class="popover left in" style="display: none">
+        <div class="arrow"></div>
+        <div class="popover-content">
+            <select>
+                {% for show in shows %}
+                    <option value="{{ show.id }}">{{ show.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary">Book</button>
+            <button type="button" class="btn">Cancel</button>
+        </div>
+    </div>
+    <div id="timetable-popover-edit" class="popover left in" style="display: none">
+        <div class="arrow"></div>
+        <div class="popover-content">
+            <button type="button" class="btn btn-danger btn-delete">Unbook</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+<div class="well sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">List header</li>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Library</a></li>
+    </ul>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    "@DjPanelShowBundle/Resources/public/js/fullcalendar.min.js"
+    "@DjPanelShowBundle/Resources/public/js/timetable.js"
+%}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+{% stylesheets
+    "@DjPanelShowBundle/Resources/public/css/fullcalendar.css"
+%}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock %}

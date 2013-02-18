@@ -1,0 +1,73 @@
+.stream .item {
+  border-bottom: 1px solid #EEE;
+  padding: 10px 0px 10px 60px;
+}
+.stream .item p.date {
+  padding: 0;
+  float: right;
+  margin-top: 10px;
+}
+.stream .item p.date small {
+  color: #888;
+}
+.stream .item .avatar {
+  border-radius: 4px;
+  margin-left: -40px;
+  margin-bottom: -40px;
+  height: 40px;
+  position: relative;
+  top: 15px;
+  right: 20px;
+  float: left;
+}
+.stream .item .stream-icon {
+  display: inline-block;
+  background-color: #CCC;
+  border-radius: 4px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  margin-left: -40px;
+  margin-bottom: -40px;
+  position: relative;
+  top: 15px;
+  right: 20px;
+  float: left;
+}
+.stream .item .stream-icon i {
+  position: relative;
+  top: 10px;
+  color: white;
+}
+.stream .item .stream-success {
+  background-color: #4cb158;
+}
+.stream .item .stream-danger {
+  background-color: #ea494a;
+}
+.stream .item .stream-warning {
+  background-color: #ffa93c;
+}
+.stream .item .stream-info {
+  background-color: #14b8d4;
+}
+.stream .item h4 {
+  margin-bottom: 6px;
+}
+.stream .item div {
+  color: #777;
+}
+.stream .item:last-child {
+  border-bottom: none;
+}
+.stream-legend {
+  margin-top: 10px;
+  border-top: 1px solid #EEE;
+  padding-top: 15px;
+  color: #666;
+  font-size: 13px;
+}
+.stream-legend .badge {
+  padding: 5px 9px;
+  margin-left: 10px;
+}

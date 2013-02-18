@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block sidebar %}
+<div class="well sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">{{ show.name }}</li>
+        <li class="active"><a href="#">Dashboard</a></li>
+        <li><a href="#">Stuff</a></li>
+    </ul>
+</div>
+<div class="well well-white well-small">
+    <div id="graphShowListeners" style="height: 150px; margin: 0 auto"></div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    "@DjPanelMainBundle/Resources/public/js/highcharts.js"
+    "@DjPanelShowBundle/Resources/public/js/show.js"
+%}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}

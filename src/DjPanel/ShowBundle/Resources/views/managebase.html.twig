@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block sidebar %}
+<div class="well sidebar-nav">
+    <ul class="nav nav-list">
+        <li class="nav-header">Shows</li>
+        <li class="active"><a href="#">My Shows</a></li>
+        <li><a href="{{ path("dj_panel_show_create") }}">Create new Show</a></li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "DjPanelShowBundle::managebase.html.twig" %}
+
+{% block pagetitle %}My Shows{% endblock %}
+
+{% block body %}
+
+<div class="page-header">
+    <h3>My Shows</h3>
+</div>
+
+{% if shows is empty %}
+<p>
+    <strong>You are not a presenter for any shows</strong>
+</p>
+<a href="{{ path("dj_panel_show_create") }}" class="btn btn-primary">Create a new Show</a>
+{% else %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Manage</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for show in shows %}
+        <tr data-showid="{{ show.id }}">
+            <td>
+                <a href="{{ path("dj_panel_show_dashboard", { showId: show.id }) }}">{{ show.name }}</a>
+            </td>
+            <td>
+                <a href="#" class="btn btn-danger btn-mini btn-delete-show">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    "bundles/djpanelshow/js/list.js"
+%}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}

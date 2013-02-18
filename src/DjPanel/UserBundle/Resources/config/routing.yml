@@ -1,0 +1,3 @@
+dj_panel_user_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DjPanelUserBundle:Default:index }

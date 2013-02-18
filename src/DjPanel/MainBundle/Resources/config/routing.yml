@@ -1,0 +1,3 @@
+dj_panel_dashboard:
+    pattern:  /
+    defaults: { _controller: DjPanelMainBundle:Dashboard:dashboard }

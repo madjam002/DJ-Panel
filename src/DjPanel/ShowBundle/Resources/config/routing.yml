@@ -1,0 +1,31 @@
+dj_panel_show_list:
+    pattern:  /myshows
+    defaults: { _controller: DjPanelShowBundle:List:list }
+
+dj_panel_show_create:
+    pattern:  /shows/create/
+    defaults: { _controller: DjPanelShowBundle:Create:create }
+
+dj_panel_show_dashboard:
+    pattern:  /show/{showId}/
+    defaults: { _controller: DjPanelShowBundle:Dashboard:view }
+
+dj_panel_timetable:
+    pattern:  /timetable
+    defaults: { _controller: DjPanelShowBundle:Timetable:show }
+
+dj_panel_timetable_book:
+    pattern:  /timetable/book
+    defaults: { _controller: DjPanelShowBundle:Timetable:book }
+    requirements:
+        _method:  POST
+
+dj_panel_timetable_unbook:
+    pattern:  /timetable/unbook
+    defaults: { _controller: DjPanelShowBundle:Timetable:unbook }
+    requirements:
+        _method:  POST
+
+dj_panel_timetable_getjson:
+    pattern:  /timetable/getjson
+    defaults: { _controller: DjPanelShowBundle:Timetable:getJson }

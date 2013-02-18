@@ -1,0 +1,25 @@
+{% extends "DjPanelShowBundle::managebase.html.twig" %}
+
+{% block pagetitle %}Create Show{% endblock %}
+
+{% block body %}
+
+<div class="page-header">
+    <h3>Create new Show</h3>
+</div>
+
+<p>
+    You can create a new show using the form below
+</p>
+
+<br>
+
+<form method="post" class="form-horizontal" novalidate>
+    {{ form_widget(createForm) }}
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Create Show</button>
+        <a href="" class="btn">Cancel</a>
+    </div>
+</form>
+
+{% endblock %}

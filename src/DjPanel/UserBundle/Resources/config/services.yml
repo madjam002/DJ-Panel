@@ -1,0 +1,7 @@
+parameters:
+#    dj_panel_user.example.class: DjPanel\UserBundle\Example
+
+services:
+#    dj_panel_user.example:
+#        class: %dj_panel_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
