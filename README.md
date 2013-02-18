@@ -1,3 +1,5 @@
+This project is NOT finished yet
+
 DJ-Panel
 ========
 
