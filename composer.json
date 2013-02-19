@@ -21,7 +21,8 @@
         "kriswallsmith/assetic": "1.1.*@dev",
         "friendsofsymfony/user-bundle": "*",
         "mopa/bootstrap-bundle": "dev-master",
-        "leafo/lessphp": ">=0.3.5"
+        "leafo/lessphp": ">=0.3.5",
+        "emberlabs/gravatarlib": "*"
     },
     "scripts": {
         "post-install-cmd": [
