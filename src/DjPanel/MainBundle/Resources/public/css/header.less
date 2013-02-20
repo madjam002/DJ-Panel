@@ -10,6 +10,7 @@
     -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
     -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
     box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+    z-index: 99;
 
     h3 {
         font-size: 24px;
@@ -39,7 +40,6 @@
 
 }
 
-/* Remove border and change up box shadow for more contrast */
 .navbar .navbar-inner {
     border: 0;
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
@@ -47,20 +47,54 @@
             box-shadow: 0 2px 10px rgba(0,0,0,.25);
 }
 
-/* Downsize the brand/project name a bit */
 .navbar .brand {
-    padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+    padding: 14px 20px 16px;
     font-size: 16px;
     font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 
-/* Navbar links: increase padding for taller navbar */
 .navbar .nav > li > a {
     padding: 15px 20px;
 }
 
-/* Offset the responsive button for proper vertical alignment */
 .navbar .btn-navbar {
     margin-top: 10px;
+}
+
+#station-status {
+    margin-top: -23px;
+    background: #282828 url(../images/headerbg.jpg);
+    background-size: 64px 64px;
+    border-color: black;
+    -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.28); -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.28); box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+    position: relative;
+    border-top-style: none;
+
+    h1, h2, h3, h4, h5 {
+        margin-bottom: 0px;
+        text-shadow: none;
+        color: gray;
+    }
+
+    h4 {
+        color: gray;
+    }
+
+    h1#station-time {
+        margin-top: 0px;
+        color: whitesmoke;
+    }
+
+    h4#station-show {
+        margin-top: 0;
+        color: whiteSmoke;
+    }
+
+    .label#station-onair {
+        float: right;
+        margin-top: -1px;
+        font-size: 17px;
+        padding: 5px 10px;
+    }
 }

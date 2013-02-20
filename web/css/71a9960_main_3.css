@@ -7,18 +7,6 @@
 .well-small {
   padding: 7px;
 }
-.page-header {
-  margin-top: -10px;
-}
-.page-header h1 {
-  margin-bottom: 0;
-}
-.page-header h2 {
-  margin-bottom: 0;
-}
-.page-header h3 {
-  margin-bottom: 0;
-}
 #page-header {
   position: relative;
   top: 0;
@@ -27,9 +15,11 @@
   padding: 20px 0 10px 0;
   margin-bottom: 20px;
   background: #282828 url(../../bundles/djpanelmain/images/headerbg.jpg);
+  background-size: 64px 64px;
   -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
   -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
   box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+  z-index: 99;
 }
 #page-header h3 {
   font-size: 24px;
@@ -69,4 +59,41 @@
 }
 .navbar .btn-navbar {
   margin-top: 10px;
+}
+#station-status {
+  margin-top: -23px;
+  background: #282828 url(../../bundles/djpanelmain/images/headerbg.jpg);
+  background-size: 64px 64px;
+  border-color: black;
+  -webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.28);
+  position: relative;
+  border-top-style: none;
+}
+#station-status h1,
+#station-status h2,
+#station-status h3,
+#station-status h4,
+#station-status h5 {
+  margin-bottom: 0px;
+  text-shadow: none;
+  color: gray;
+}
+#station-status h4 {
+  color: gray;
+}
+#station-status h1#station-time {
+  margin-top: 0px;
+  color: whitesmoke;
+}
+#station-status h4#station-show {
+  margin-top: 0;
+  color: whiteSmoke;
+}
+#station-status .label#station-onair {
+  float: right;
+  margin-top: -1px;
+  font-size: 17px;
+  padding: 5px 10px;
 }

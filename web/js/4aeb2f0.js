@@ -147,6 +147,8 @@ $(function() {
                 $.post("./timetable/book", { show: $("#timetable-popover-create select").val(), startDate: start.toISOString(), endDate: end.toISOString() }, function(d) {
                     if (d.status == "SUCCESS") {
                         timetable.fullCalendar('refetchEvents');
+                    } else {
+                        timetable.fullCalendar('unselect');
                     }
                 }, "json");
                 $(this).attr("disabled", "1");
@@ -162,7 +164,7 @@ $(function() {
                 .css("top", $(this).offset().top - $("#timetable").offset().top +
                     ($(this).height() / 2) - ($("#timetable-popover-edit").height() / 2))
                 .css("left", $(this).offset().left - $("#timetable").offset().left - $("#timetable-popover-edit").width());
-            $("#timetable-popover-edit .btn-delete").bind("click", function() {
+            $("#timetable-popover-edit .btn-delete").unbind("click").bind("click", function() {
                 $.post("./timetable/unbook", { booking: event.id }, function(d) {
                     if (d.status == "SUCCESS") {
                         timetable.fullCalendar("removeEvents", event.id);
