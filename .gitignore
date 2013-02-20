@@ -15,3 +15,8 @@ app/config/parameters.yml
 # Composer
 composer.phar
 /nbproject/private/
+
+# Vagrant / Chef
+Vagrantfile
+.vagrant
+chef/*
