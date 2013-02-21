@@ -20,12 +20,14 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
 
             new DjPanel\MainBundle\DjPanelMainBundle(),
             new DjPanel\UserBundle\DjPanelUserBundle(),
             new DjPanel\ShowBundle\DjPanelShowBundle(),
             new DjPanel\ApiBundle\DjPanelApiBundle(),
+            new DjPanel\AutoDjBundle\DjPanelAutoDjBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

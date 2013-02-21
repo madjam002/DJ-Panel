@@ -1,5 +1,6 @@
 parameters:
-#    dj_panel_main.example.class: DjPanel\MainBundle\Example
+    liquidsoap.host: "localhost"
+    liquidsoap.port: 1234
 
 services:
 #    dj_panel_main.example:

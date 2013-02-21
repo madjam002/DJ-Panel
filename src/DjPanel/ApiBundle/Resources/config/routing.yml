@@ -1,3 +1,11 @@
 dj_panel_api_show_delete:
     pattern:  /show/delete
     defaults: { _controller: DjPanelApiBundle:Show:delete }
+
+dj_panel_api_station_info:
+    pattern:  /info
+    defaults: { _controller: DjPanelApiBundle:Station:info }
+
+dj_panel_api_station_nowplaying:
+    pattern:  /nowplaying
+    defaults: { _controller: DjPanelApiBundle:Station:nowPlaying }

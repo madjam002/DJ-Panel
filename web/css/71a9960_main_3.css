@@ -1,3 +1,17 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix {
+  zoom: 1;
+}
+*:first-child+html .clearfix {
+  zoom: 1;
+}
 .sidebar-nav {
   padding: 10px 0px;
 }
@@ -62,6 +76,7 @@
 }
 #station-status {
   margin-top: -23px;
+  margin-bottom: 0px;
   background: #282828 url(../../bundles/djpanelmain/images/headerbg.jpg);
   background-size: 64px 64px;
   border-color: black;
@@ -96,4 +111,17 @@
   margin-top: -1px;
   font-size: 17px;
   padding: 5px 10px;
+}
+#station-nowplaying {
+  margin-top: -10px;
+  margin-left: 10px;
+  padding-bottom: 15px;
+  width: 210px;
+}
+#station-nowplaying > img {
+  width: 64px;
+  height: 64px;
+  float: left;
+  margin-right: 10px;
+  font-size: 12px;
 }

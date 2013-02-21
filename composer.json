@@ -22,7 +22,7 @@
         "friendsofsymfony/user-bundle": "*",
         "mopa/bootstrap-bundle": "dev-master",
         "leafo/lessphp": ">=0.3.5",
-        "emberlabs/gravatarlib": "*"
+        "friendsofsymfony/jsrouting-bundle": "1.1.*"
     },
     "scripts": {
         "post-install-cmd": [

@@ -1,0 +1,9 @@
+parameters:
+#    dj_panel_auto_dj.example.class: DjPanel\AutoDjBundle\Example
+    auto_dj.enabled: true
+    auto_dj.name: "Auto DJ"
+
+services:
+#    dj_panel_auto_dj.example:
+#        class: %dj_panel_auto_dj.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

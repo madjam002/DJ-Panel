@@ -1,0 +1,1 @@
+fos.Router.setData({"base_url":"","routes":{"dj_panel_api_show_delete":{"tokens":[["text","\/api\/show\/delete"]],"defaults":[],"requirements":[]},"dj_panel_api_station_nowplaying":{"tokens":[["text","\/api\/nowplaying"]],"defaults":[],"requirements":[]}},"prefix":"","host":"localhost","scheme":"http"});

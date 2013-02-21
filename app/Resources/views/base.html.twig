@@ -18,6 +18,9 @@
         {% endstylesheets %}
         {% endblock %}
 
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 
     </head>
@@ -49,7 +52,7 @@
                                 <li class="active"><a href="{{ path("dj_panel_dashboard") }}">Dashboard</a></li>
                                 <li><a href="{{ path("dj_panel_show_list") }}">My Shows</a></li>
                                 <li><a href="{{ path("dj_panel_timetable") }}">Timetable</a></li>
-                                <li><a href="#">Auto DJ</a></li>
+                                <li><a href="{{ path("dj_panel_auto_dj_homepage") }}">Auto DJ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -65,11 +68,17 @@
                     <div id="station-status" class="well">
                         <h4>
                             Station Time
-                            <span id="station-onair" class="label label-success">On Air</span>
+                            <span id="station-onair" class="label">....</span>
                         </h4>
                         <h1 id="station-time">00:00:00</h1>
                         <h5>Current Show</h5>
                         <h4 id="station-show">Auto DJ</h4>
+                    </div>
+                    <div id="station-nowplaying" class="well">
+                        <img src="#" alt="Now Playing">
+                        <span id="station-nowplaying-artist">...</span><br>
+                        <strong id="station-nowplaying-title">...</strong>
+                        <div class="clearfix"></div>
                     </div>
                     {% block sidebar %}{% endblock %}
                 </div>
@@ -94,12 +103,17 @@
 
         </div>
 
+        <script>
+            var ServerTime = new Date("{{ "now"|date("Y-m-d H:i:s") }}");
+        </script>
+
         {% block javascripts %}
 
         {% javascripts
             "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"
             "http://code.jquery.com/ui/1.10.1/jquery-ui.js"
             "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"
+            "https://raw.github.com/timrwood/moment/2.0.0/min/moment.min.js"
             "bundles/djpanelmain/js/main.js"
         %}
             <script src="{{ asset_url }}"></script>
