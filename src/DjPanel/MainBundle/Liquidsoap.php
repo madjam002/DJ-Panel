@@ -4,8 +4,16 @@ namespace DjPanel\MainBundle;
 
 use Exception;
 
-class LiquidSoap {
+class LiquidSoap
+{
 
+    /**
+     * Sends a command to the Liquidsoap Telnet Server
+     * @param string  $command    Command to Send
+     * @param boolean $throwError Indicates whether to throw an error if there is a problem connecting to the server
+     * @return string
+     * @throws Exception
+     */
     public static function sendCommand($command, $throwError=false)
     {
         $return = "";
@@ -26,6 +34,10 @@ class LiquidSoap {
         return strstr($return, 'END', true);
     }
 
+    /**
+     * Returns the meta data for the current track which is being played
+     * @return array
+     */
     public static function getNowPlaying()
     {
         // Get metadata from liquidsoap
@@ -50,6 +62,10 @@ class LiquidSoap {
         return $nowPlaying;
     }
 
+    /**
+     * Indicates whether the Liquidsoap Server is online
+     * @return boolean
+     */
     public static function isOnline()
     {
         try {
