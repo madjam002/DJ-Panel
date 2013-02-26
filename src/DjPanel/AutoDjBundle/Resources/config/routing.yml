@@ -1,3 +1,16 @@
 dj_panel_auto_dj_homepage:
     pattern:  /autodj/
     defaults: { _controller: DjPanelAutoDjBundle:Dashboard:view }
+
+dj_panel_auto_dj_playlists:
+    pattern:  /autodj/playlists
+    defaults: { _controller: DjPanelAutoDjBundle:Playlist:view }
+
+
+# AJAX Routes
+
+dj_panel_auto_dj_playlist_list:
+    pattern:  /autodj/playlist/list
+    defaults: { _controller: DjPanelAutoDjBundle:Playlist:list }
+    options:
+        expose: true

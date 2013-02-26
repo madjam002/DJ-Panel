@@ -1,0 +1,18 @@
+{% extends "DjPanelAutoDjBundle::base.html.twig" %}
+
+{% block pagetitle %}Playlist Manager{% endblock %}
+
+{% block body %}
+
+<div id="playlist-manager">Loading</div>
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% javascripts
+    "@DjPanelAutoDjBundle/Resources/public/js/playlist.js"
+%}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}

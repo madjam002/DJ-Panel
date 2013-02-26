@@ -1,0 +1,24 @@
+<div class="page-header">
+    <h3>Playlist Manager</h3>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Manage</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for playlist in playlists %}
+        <tr data-playlistid="{{ playlist.id }}">
+            <td>
+                <a href="{{ path("dj_panel_show_dashboard", { showId: playlist.id }) }}">{{ playlist.name }}</a>
+            </td>
+            <td>
+                <a href="#" class="btn btn-danger btn-mini btn-delete-show">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -20,3 +20,6 @@ composer.phar
 Vagrantfile
 .vagrant
 chef/*
+
+# Random Stuff
+music/*
