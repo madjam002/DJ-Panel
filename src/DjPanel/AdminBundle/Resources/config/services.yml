@@ -1,0 +1,7 @@
+parameters:
+#    dj_panel_admin.example.class: DjPanel\AdminBundle\Example
+
+services:
+#    dj_panel_admin.example:
+#        class: %dj_panel_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
