@@ -25,5 +25,6 @@ Vagrantfile
 .vagrant
 chef/*
 
-# Random Stuff
+# Liquidsoap
 music/*
+liquidsoap/*.log
