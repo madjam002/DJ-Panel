@@ -9,11 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class StationController extends Controller
+class StationController extends ApiController
 {
 
     public function infoAction(Request $request)
     {
+        // Check API Key
+        if ($this->checkApiKey()) {
+            $this->createApiAuthenticationError();
+        }
+
         // Is online/on air?
         $onAir = LiquidSoap::isOnline();
         $nowPlaying = null;
@@ -31,6 +36,11 @@ class StationController extends Controller
 
     public function nowPlayingAction(Request $request)
     {
+        // Check API Key
+        if ($this->checkApiKey()) {
+            $this->createApiAuthenticationError();
+        }
+
         // Get now playing data from Liquidsoap
         $nowPlaying = LiquidSoap::getNowPlaying();
 
@@ -39,6 +49,11 @@ class StationController extends Controller
 
     public function shoutoutAction(Request $request)
     {
+        // Check API Key
+        if ($this->checkApiKey()) {
+            $this->createApiAuthenticationError();
+        }
+        
         // Submit Shoutout
         $content = $request->get("content");
         $via = $request->get("via");

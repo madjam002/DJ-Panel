@@ -6,11 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ShowController extends Controller
+class ShowController extends ApiController
 {
     public function deleteAction(Request $request)
     {
-        $user = $this->get("security.context")->getToken()->getUser();
+        // Check API Key
+        if ($this->checkApiKey()) {
+            $this->createApiAuthenticationError();
+        }
 
         $showId = $request->get("showId");
 
@@ -23,7 +26,7 @@ class ShowController extends Controller
         $show = $showRepository->find($showId);
 
         // Check if Show Exists
-        if ($show == null || !$show->getPresenters()->contains($user)) {
+        if ($show == null) {
             return new Response(json_encode(array("status" => "DOESNT_EXIST")));
         }
 
