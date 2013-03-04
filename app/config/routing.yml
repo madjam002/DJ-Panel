@@ -1,3 +1,7 @@
+dj_panel_admin:
+    resource: "@DjPanelAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 dj_panel_auto_dj:
     resource: "@DjPanelAutoDjBundle/Resources/config/routing.yml"
     prefix:   /

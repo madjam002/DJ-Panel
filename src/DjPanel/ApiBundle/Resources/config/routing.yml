@@ -9,3 +9,7 @@ dj_panel_api_station_info:
 dj_panel_api_station_nowplaying:
     pattern:  /nowplaying
     defaults: { _controller: DjPanelApiBundle:Station:nowPlaying }
+
+dj_panel_api_shoutout:
+    pattern:  /shoutout
+    defaults: { _controller: DjPanelApiBundle:Station:shoutout }

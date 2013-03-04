@@ -1,0 +1,13 @@
+{# Dislike Stream Item #}
+<div class="item">
+    <div class="stream-icon stream-danger">
+        <i class="icon-thumbs-down"></i>
+    </div>
+    <p class="date">{{ time_diff(item.time) }} <small>via {{ item.via }}</small></p>
+    <h4>{{ item.username }}</h4>
+    <div class="row">
+        <p class="span6">
+            thinks that <strong>{{ item.content }}</strong> is a poon!
+        </p>
+    </div>
+</div>

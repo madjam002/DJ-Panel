@@ -3,8 +3,7 @@
 namespace DjPanel\ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 abstract class ApiController extends Controller
 {
@@ -29,6 +28,11 @@ abstract class ApiController extends Controller
     protected function createApiAuthenticationError()
     {
         return new Response(json_encode(array("status" => "API_AUTH_ERROR")));
+    }
+
+    protected function createApiParameterError()
+    {
+        return new Response(json_encode(array("status" => "API_INVALID_PARAMS")));
     }
 
 }

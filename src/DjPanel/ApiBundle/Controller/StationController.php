@@ -4,10 +4,8 @@ namespace DjPanel\ApiBundle\Controller;
 
 use DjPanel\MainBundle\Entity\StreamItem;
 use DjPanel\MainBundle\LiquidSoap;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class StationController extends ApiController
 {
@@ -15,8 +13,8 @@ class StationController extends ApiController
     public function infoAction(Request $request)
     {
         // Check API Key
-        if ($this->checkApiKey()) {
-            $this->createApiAuthenticationError();
+        if (!$this->checkApiKey()) {
+            return $this->createApiAuthenticationError();
         }
 
         // Is online/on air?
@@ -37,8 +35,8 @@ class StationController extends ApiController
     public function nowPlayingAction(Request $request)
     {
         // Check API Key
-        if ($this->checkApiKey()) {
-            $this->createApiAuthenticationError();
+        if (!$this->checkApiKey()) {
+            return $this->createApiAuthenticationError();
         }
 
         // Get now playing data from Liquidsoap
@@ -50,19 +48,23 @@ class StationController extends ApiController
     public function shoutoutAction(Request $request)
     {
         // Check API Key
-        if ($this->checkApiKey()) {
-            $this->createApiAuthenticationError();
+        if (!$this->checkApiKey()) {
+            return $this->createApiAuthenticationError();
         }
-        
+
         // Submit Shoutout
         $content = $request->get("content");
         $via = $request->get("via");
         $username = $request->get("username");
 
+        if ($username == null || $via == null || $content == null) {
+            return $this->createApiParameterError();
+        }
+
         // Create new Shoutout
         $shoutout = new StreamItem();
         $shoutout->setType(StreamItem::TYPE_SHOUTOUT);
-        $shoutout->setTime(new DateTime());
+        $shoutout->setTime(new \DateTime());
         $shoutout->setContent($content);
         $shoutout->setVia($via);
         $shoutout->setUsername($username);

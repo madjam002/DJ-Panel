@@ -1,0 +1,13 @@
+{# Request Stream Item #}
+<div class="item">
+    <div class="stream-icon stream-warning">
+        <i class="icon-reply"></i>
+    </div>
+    <p class="date">{{ time_diff(item.time) }} <small>via {{ item.via }}</small></p>
+    <h4>{{ item.username }}</h4>
+    <div class="row">
+        <p class="span6">
+            {{ item.content }}
+        </p>
+    </div>
+</div>

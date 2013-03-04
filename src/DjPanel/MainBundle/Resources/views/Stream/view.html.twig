@@ -1,0 +1,15 @@
+{# Radio Stream #}
+<h4>Stream</h4>
+<div class="stream" style="overflow:auto;height:400px;">
+    {% for item in streamItems %}
+        {% include "DjPanelMainBundle:Stream:item_" ~ item.type ~ ".html.twig"
+            with {"item": item}
+        %}
+    {% endfor %}
+</div>
+<div class="stream-legend">
+    <span class="badge badge-success"><i class="icon-thumbs-up"></i></span> Choon
+    <span class="badge badge-important"><i class="icon-thumbs-down"></i></span> Poon
+    <span class="badge badge-info"><i class="icon-bullhorn"></i></span> Shoutout
+    <span class="badge badge-warning"><i class="icon-reply"></i></span> Request
+</div>

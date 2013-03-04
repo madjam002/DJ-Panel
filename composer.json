@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "*",
         "mopa/bootstrap-bundle": "dev-master",
         "leafo/lessphp": ">=0.3.5",
-        "friendsofsymfony/jsrouting-bundle": "1.1.*"
+        "friendsofsymfony/jsrouting-bundle": "1.1.*",
+        "knplabs/knp-time-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [

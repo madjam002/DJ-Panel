@@ -11,15 +11,15 @@ class ShowController extends ApiController
     public function deleteAction(Request $request)
     {
         // Check API Key
-        if ($this->checkApiKey()) {
-            $this->createApiAuthenticationError();
+        if (!$this->checkApiKey()) {
+            return $this->createApiAuthenticationError();
         }
 
         $showId = $request->get("showId");
 
         // Check for blank values
         if ($showId == null) {
-            return new Response(json_encode(array("status" => "INVALID_PARAMS")));
+            return $this->createApiParameterError();
         }
 
         $showRepository = $this->getDoctrine()->getRepository("DjPanelShowBundle:Show");

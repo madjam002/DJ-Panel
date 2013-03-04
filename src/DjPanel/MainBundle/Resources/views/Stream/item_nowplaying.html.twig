@@ -1,0 +1,13 @@
+{# Now Playing Stream Item #}
+<div class="item">
+    <div class="stream-icon">
+        <i class="icon-play"></i>
+    </div>
+    <p class="date">{{ time_diff(item.time) }}</p>
+    <h4>Now Playing</h4>
+    <div class="row">
+        <p class="span6">
+            {{ item.content }}
+        </p>
+    </div>
+</div>

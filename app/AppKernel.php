@@ -22,16 +22,17 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
 
             new DjPanel\MainBundle\DjPanelMainBundle(),
             new DjPanel\UserBundle\DjPanelUserBundle(),
             new DjPanel\ShowBundle\DjPanelShowBundle(),
             new DjPanel\ApiBundle\DjPanelApiBundle(),
             new DjPanel\AutoDjBundle\DjPanelAutoDjBundle(),
+            new DjPanel\AdminBundle\DjPanelAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

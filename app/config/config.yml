@@ -74,3 +74,7 @@ mopa_bootstrap:
     form:
         render_fieldset: false
         show_legend: false
+
+# Knp Time Bundle Configuration
+knp_time:
+    ~
